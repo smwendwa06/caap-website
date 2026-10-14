@@ -1,0 +1,13 @@
+# Real credentials: never commit these
+caap_includes/config.php
+
+# One-time admin setup page: only ever lives on the server briefly
+public/setup_admin.php
+
+# Server and editor noise
+error_log
+*.log
+*.zip
+.DS_Store
+Thumbs.db
+.vscode/

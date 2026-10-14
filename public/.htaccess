@@ -1,0 +1,13 @@
+# Don't list folder contents
+Options -Indexes
+
+# Keep PHP's error log private
+<Files "error_log">
+    Require all denied
+</Files>
+
+# Force HTTPS on the live domain only, so local development over plain http still works
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} ^(www\.)?caapke\.org$ [NC]
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301]
